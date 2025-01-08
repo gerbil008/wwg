@@ -1,0 +1,3 @@
+define(a, purple);
+background($a$);
+rectangle(window_x/2, 30, 700, 300,  black);

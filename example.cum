@@ -1,0 +1,13 @@
+//constants
+//window_x
+//window_y
+
+
+define(x, value);
+background(color);
+circle($x$, y, radius, color);
+rectangle(x, y, width, heigth, color);
+text(string text, x, y, heigth, color);
+rectangle_lines(x, y, width, heigth, color);
+circle_lines(x, y, radius, color);
+
