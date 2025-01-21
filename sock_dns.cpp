@@ -12,6 +12,7 @@
 
 using json =  nlohmann::json;
 
+
 void log(std::string msg){
     std::cout<<msg<<std::endl;
 }

@@ -4,9 +4,12 @@
 #include <netinet/in.h>
 #include <unistd.h>
 #include <string_ops.h>
+#include <string>
 
 #define port 6969
 #define buffer_size 4098
+
+const char* path = "./websites/";
 
 void log(std::string msg){
     std::cout<<msg<<std::endl;
@@ -29,7 +32,11 @@ int main() {
         new_socket = accept(server_fd, (struct sockaddr *)&address, (socklen_t*)&addrlen);
         read(new_socket, buffer, buffer_size);
         log(buffer);
-        std::string content = read_file(buffer);
+        std::string buf(buffer);
+        std::string filename = path;
+        filename += buf;
+        std::cout<<"filename is: "<<filename<<std::endl;
+        std::string content = read_file(filename.c_str());
         std::cout<<"server sent: "<<content.c_str()<<std::endl;
         send(new_socket, content.c_str(), strlen(content.c_str()), 0);
         close(new_socket);
